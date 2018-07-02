@@ -433,29 +433,40 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
+                                <h1 id="typescript-&#xC18C;&#xAC1C;">TypeScript &#xC18C;&#xAC1C;</h1>
+<p>&#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC744; &#xC720;&#xC6A9;&#xD558;&#xAC8C; &#xD560;&#xB824;&#xBA74;, &#xAC00;&#xC7A5; &#xAC04;&#xB2E8;&#xD55C; &#xB370;&#xC774;&#xD130; &#xB2E8;&#xC704;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC22B;&#xC790;, &#xBB38;&#xC790;&#xC5F4;, &#xAD6C;&#xC870;&#xCCB4;, &#xCC38;&#xACFC; &#xAC70;&#xC9D3; &#xAC12; &#xAC19;&#xC740; &#xAC83;&#xB4E4;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+TypeScript&#xC5D0;&#xC11C;&#xB294; JavaScript&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC19;&#xC740; type&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;. &#xD3B8;&#xB9AC;&#xD55C; &#xC5F4;&#xAC70;?</p>
 <p>For programs to be useful, we need to be able to work with some of the simplest units of data: numbers, strings, structures, boolean values, and the like.
 In TypeScript, we support much the same types as you would expect in JavaScript, with a convenient enumeration type thrown in to help things along.</p>
 <h1 id="boolean">Boolean</h1>
+<p>&#xAC00;&#xC7A5; &#xAE30;&#xCD08;&#xC801;&#xC778; &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;&#xC740; &#xCC38;/&#xAC70;&#xC9D3; &#xAC12; &#xC785;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; JavaScript&#xC640; TypeScript&#xC5D0;&#xC11C;&#xB294; <code>boolean</code> &#xAC12; &#xC774;&#xB77C;&#xACE0; &#xBD80;&#xB985;&#xB2C8;&#xB2E4;.</p>
 <p>The most basic datatype is the simple true/false value, which JavaScript and TypeScript call a <code>boolean</code> value.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> isDone: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">false</span>;
 </code></pre>
 <h1 id="number">Number</h1>
+<p>JavaScript&#xC640; &#xAC19;&#xC774; TypeScript&#xC5D0;&#xC11C;&#xB3C4; &#xBAA8;&#xB4E0; &#xC22B;&#xC790;&#xB294; &#xBD80;&#xB3D9; &#xC18C;&#xC218;&#xC810; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.
+&#xBD80;&#xB3D9; &#xC18C;&#xC218;&#xC810; &#xC22B;&#xC790;&#xB4E4;&#xC740; <code>number</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; 16&#xC9C4;&#xC218;&#xC640; 10&#xC9C4;&#xC218; &#xB9AC;&#xD130;&#xB7F4;&#xB3C4; &#xAC19;&#xC740; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.
+TypeScript&#xB294; ECMAScript 2015&#xC5D0;&#xC11C; &#xC18C;&#xAC1C;&#xB41C; 2&#xC9C4;&#xC218;&#xC640; 8&#xC9C4;&#xC218; &#xB9AC;&#xD130;&#xB7F4;&#xB3C4; &#xC9C0;&#xC6D0; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>As in JavaScript, all numbers in TypeScript are floating point values.
 These floating point numbers get the type <code>number</code>.
 In addition to hexadecimal and decimal literals, TypeScript also supports binary and octal literals introduced in ECMAScript 2015.</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">let</span> decimal: <span class="hljs-built_in">number</span> = <span class="hljs-number">6</span>;
-<span class="hljs-keyword">let</span> hex: <span class="hljs-built_in">number</span> = <span class="hljs-number">0xf00d</span>;
-<span class="hljs-keyword">let</span> binary: <span class="hljs-built_in">number</span> = <span class="hljs-number">0b1010</span>;
-<span class="hljs-keyword">let</span> octal: <span class="hljs-built_in">number</span> = <span class="hljs-number">0o744</span>;
+<pre><code class="lang-ts"><span class="hljs-keyword">let</span> decimal: <span class="hljs-built_in">number</span> = <span class="hljs-number">6</span>;        <span class="hljs-comment">//10&#xC9C4;&#xC218;</span>
+<span class="hljs-keyword">let</span> hex: <span class="hljs-built_in">number</span> = <span class="hljs-number">0xf00d</span>;       <span class="hljs-comment">//16&#xC9C4;&#xC218;</span>
+<span class="hljs-keyword">let</span> binary: <span class="hljs-built_in">number</span> = <span class="hljs-number">0b1010</span>;    <span class="hljs-comment">//2&#xC9C4;&#xC218;</span>
+<span class="hljs-keyword">let</span> octal: <span class="hljs-built_in">number</span> = <span class="hljs-number">0o744</span>;      <span class="hljs-comment">//8&#xC9C4;&#xC218;</span>
 </code></pre>
 <h1 id="string">String</h1>
+<p>JavaScript&#xC5D0;&#xC11C; &#xC6F9;&#xD398;&#xC774;&#xC9C0;&#xC640; &#xC11C;&#xBC84;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xAC19;&#xC740; &#xC77C;&#xC744; &#xD560;&#xB584;, &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xBD80;&#xBD84;&#xC740; &#xD14D;&#xC2A4;&#xD2B8; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+&#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; <code>string</code> &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xD14D;&#xC2A4;&#xD2B8;&#xC744; &#xCC38;&#xC870;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
+JavaScript &#xCC98;&#xB7FC; TypeScript&#xC5D0;&#xC11C;&#xB3C4; &#xC30D;&#xB530;&#xC634;&#xD45C; (<code>&quot;</code>) &#xB098; &#xC791;&#xC740; &#xB530;&#xC634;&#xD45C; (<code>&apos;</code>) &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBB38;&#xC790;&#xC5F4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC10;&#xC2F8;&#xC11C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>Another fundamental part of creating programs in JavaScript for webpages and servers alike is working with textual data.
 As in other languages, we use the type <code>string</code> to refer to these textual datatypes.
 Just like JavaScript, TypeScript also uses double quotes (<code>&quot;</code>) or single quotes (<code>&apos;</code>) to surround string data.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> color: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;blue&quot;</span>;
 color = <span class="hljs-string">&apos;red&apos;</span>;
 </code></pre>
+<p>&#xB610;&#xD55C; <em>&#xD15C;&#xD50C;&#xB9BF; &#xBB38;&#xC790;&#xC5F4;</em>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC5EC;&#xB7EC; &#xC904;&#xC774;&#xB098; &#xB0B4;&#xC7A5;&#xB41C; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9;&#xD560;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC544;&#xB798; &#xBB38;&#xC790;&#xC5F4;&#xC740; &#xC5ED; &#xB530;&#xC634;&#xD45C;/&#xC5ED; &#xC778;&#xC6A9; &#xBD80;&#xD638;(<code>` </code>) &#xBB38;&#xC790;&#xB85C; &#xAC10;&#xC2F8;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; <code>${ expr }</code> &#xC73C;&#xB85C; &#xB0B4;&#xC7A5;&#xB41C; &#xD45C;&#xD604;&#xC2DD;&#xC744; &#xC0C1;&#xC6A9; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>You can also use <em>template strings</em>, which can span multiple lines and have embedded expressions.
 These strings are surrounded by the backtick/backquote (<code>` </code>) character, and embedded expressions are of the form <code>${ expr }</code>.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> fullName: <span class="hljs-built_in">string</span> = <span class="hljs-string">`Bob Bobbington`</span>;
@@ -464,20 +475,27 @@ These strings are surrounded by the backtick/backquote (<code>` </code>) charact
 
 I&apos;ll be <span class="hljs-subst">${ age + 1 }</span> years old next month.`</span>;
 </code></pre>
+<p>&#xC774;&#xAC83;&#xC740; <code>&#xBB38;&#xC7A5;</code> &#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC120;&#xC5B8;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>This is equivalent to declaring <code>sentence</code> like so:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> sentence: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;Hello, my name is &quot;</span> + fullName + <span class="hljs-string">&quot;.\n\n&quot;</span> +
     <span class="hljs-string">&quot;I&apos;ll be &quot;</span> + (age + <span class="hljs-number">1</span>) + <span class="hljs-string">&quot; years old next month.&quot;</span>;
 </code></pre>
 <h1 id="array">Array</h1>
+<p>TypeScript&#xC5D0;&#xC11C; JavaScript&#xCC98;&#xB7FC; &#xAC12;&#xC744; &#xBC30;&#xC5F4;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xBC30;&#xC5F4; &#xD0C0;&#xC785;&#xC740; &#xB450;&#xAC00;&#xC9C0; &#xBC29;&#xBC95; &#xC911; &#xD558;&#xB098;&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xC5EC; &#xC791;&#xC131;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xCCAB;&#xBC88;&#xC9F8; &#xBC29;&#xBC95;&#xC740; <code>[]</code>&#xB97C; &#xD0C0;&#xC785;&#xB4A4;&#xC5D0; &#xC120;&#xC5B8;&#xD558;&#xC5EC; &#xBC30;&#xC5F4;&#xC744; &#xC120;&#xC5B8; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;..</p>
 <p>TypeScript, like JavaScript, allows you to work with arrays of values.
 Array types can be written in one of two ways.
 In the first, you use the type of the elements followed by <code>[]</code> to denote an array of that element type:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> list: <span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
 </code></pre>
+<p>&#xB450;&#xBC88;&#xC9F8; &#xBC29;&#xBC95;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xBC30;&#xC5F4; &#xD0C0;&#xC785;&#xC778; <code>Array&lt;elemType&gt;</code> &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83; &#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>The second way uses a generic array type, <code>Array&lt;elemType&gt;</code>:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> list: <span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">number</span>&gt; = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
 </code></pre>
 <h1 id="tuple">Tuple</h1>
+<p>Tuple &#xD0C0;&#xC785;&#xC740; &#xBC30;&#xC5F4;&#xC5D0;&#xC11C; &#xB2E4;&#xB978; &#xD0C0;&#xC785;&#xC774; &#xD544;&#xC694;&#xD560;&#xB54C;, &#xBC30;&#xC5F4; &#xC704;&#xCE58;&#xC5D0; &#xD0C0;&#xC785;&#xC744; &#xACE0;&#xC815;&#xD558;&#xC5EC; &#xD45C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xC2DC;&#xB85C; <code>string</code> &#xACFC; <code>number</code> &#xB450; &#xAC00;&#xC9C0; &#xAC12;&#xC774; &#xD544;&#xC694;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 <p>Tuple types allow you to express an array where the type of a fixed number of elements is known, but need not be the same.
 For example, you may want to represent a value as a pair of a <code>string</code> and a <code>number</code>:</p>
 <pre><code class="lang-ts"><span class="hljs-comment">// Declare a tuple type</span>
@@ -487,10 +505,12 @@ x = [<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-numbe
 <span class="hljs-comment">// Initialize it incorrectly</span>
 x = [<span class="hljs-number">10</span>, <span class="hljs-string">&quot;hello&quot;</span>]; <span class="hljs-comment">// Error</span>
 </code></pre>
+<p>&#xACE0;&#xC815;&#xB41C; &#xC704;&#xCE58;&#xC5D0; &#xC811;&#xADFC;&#xC744; &#xD558;&#xBA74; &#xC54C;&#xB9DE;&#xC740; &#xD0C0;&#xC785;&#xC744; &#xCC3E;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>When accessing an element with a known index, the correct type is retrieved:</p>
 <pre><code class="lang-ts"><span class="hljs-built_in">console</span>.log(x[<span class="hljs-number">0</span>].substr(<span class="hljs-number">1</span>)); <span class="hljs-comment">// OK</span>
 <span class="hljs-built_in">console</span>.log(x[<span class="hljs-number">1</span>].substr(<span class="hljs-number">1</span>)); <span class="hljs-comment">// Error, &apos;number&apos; does not have &apos;substr&apos;</span>
 </code></pre>
+<p>&#xACE0;&#xC815;&#xB41C; &#xC704;&#xCE58; &#xBC16;&#xC73C;&#xB85C; &#xC811;&#xADFC;&#xD558;&#xBA74; union &#xD0C0;&#xC785;&#xC774; &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xB428;&#xB2C8;&#xB2E4;.</p>
 <p>When accessing an element outside the set of known indices, a union type is used instead:</p>
 <pre><code class="lang-ts">x[<span class="hljs-number">3</span>] = <span class="hljs-string">&quot;world&quot;</span>; <span class="hljs-comment">// OK, &apos;string&apos; can be assigned to &apos;string | number&apos;</span>
 
@@ -498,23 +518,32 @@ x = [<span class="hljs-number">10</span>, <span class="hljs-string">&quot;hello&
 
 x[<span class="hljs-number">6</span>] = <span class="hljs-literal">true</span>; <span class="hljs-comment">// Error, &apos;boolean&apos; isn&apos;t &apos;string | number&apos;</span>
 </code></pre>
+<p>Union &#xD0C0;&#xC785;&#xC740; &#xC774;&#xD6C4; Advanced Types&#xC7A5;&#xC5D0;&#xC11C; &#xB2E4;&#xB8E8;&#xB294; &#xACE0;&#xAE09; &#xC8FC;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>Union types are an advanced topic that we&apos;ll cover in a later chapter.</p>
 <h1 id="enum">Enum</h1>
+<p>&#xD45C;&#xC900; &#xB370;&#xC774;&#xD130; &#xD0C0;&#xC785;&#xC744; JavaScript&#xC5D0;&#xC11C; &#xC720;&#xC6A9;&#xD558;&#xAC8C; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; <code>enum</code>&#xC785;&#xB2C8;&#xB2E4;.
+C#&#xACFC; &#xAC19;&#xC774; enum&#xC740; &#xCE5C;&#xADFC;&#xD55C; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC22B;&#xC790;&#xAC12;&#xC744; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;&#xC785;&#xB2C8;&#xB2E4;. </p>
 <p>A helpful addition to the standard set of datatypes from JavaScript is the <code>enum</code>.
 As in languages like C#, an enum is a way of giving more friendly names to sets of numeric values.</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">enum</span> Color {Red, Green, Blue}
 <span class="hljs-keyword">let</span> c: Color = Color.Green;
 </code></pre>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; enum&#xC740; 0&#xBD80;&#xD130; &#xC2DC;&#xC791;&#xD558;&#xC5EC; &#xBC88;&#xD638;&#xB97C; &#xB9E4;&#xAE41;&#xB2C8;&#xB2E4;.
+&#xD558;&#xB098;&#xC758; &#xAC12;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xBC88;&#xD638; &#xB9E4;&#xAE30;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xBC14;&#xAFC0; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB85C; &#xC774;&#xC804; &#xC608;&#xC81C;&#xB97C; <code>0</code> &#xB300;&#xC2E0; <code>1</code> &#xBD80;&#xD130; &#xBC88;&#xD638;&#xAC00; &#xC2DC;&#xC791; &#xB418;&#xB3C4;&#xB85D; &#xD560;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>By default, enums begin numbering their members starting at <code>0</code>.
 You can change this by manually setting the value of one of its members.
 For example, we can start the previous example at <code>1</code> instead of <code>0</code>:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">enum</span> Color {Red = <span class="hljs-number">1</span>, Green, Blue}
 <span class="hljs-keyword">let</span> c: Color = Color.Green;
 </code></pre>
+<p>&#xD639;&#xC740; enum&#xC5D0; &#xAC12;&#xC744; &#xBAA8;&#xB450; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>Or, even manually set all the values in the enum:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">enum</span> Color {Red = <span class="hljs-number">1</span>, Green = <span class="hljs-number">2</span>, Blue = <span class="hljs-number">4</span>}
 <span class="hljs-keyword">let</span> c: Color = Color.Green;
 </code></pre>
+<p>enum&#xC758; &#xD3B8;&#xB9AC;&#xD55C; &#xAE30;&#xB2A5;&#xC740; &#xC22B;&#xC790; &#xAC12;&#xC73C;&#xB85C; enum&#xC548;&#xC758; &#xC774;&#xB984; &#xAC12;&#xC744; &#xAC00;&#xC838;&#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB85C; <code>2</code>&#xB77C;&#xB294; &#xAC12;&#xC774; &#xC788;&#xC73C;&#xB098; <code>Color</code>&#xC5D0;&#xC11C; &#xBB34;&#xC5C7;&#xACFC; &#xB9E4;&#xD551;&#xC774; &#xB418;&#xB294;&#xC9C0; &#xD655;&#xC2E0;&#xD560; &#xC218; &#xC5C6;&#xC744;&#xB54C;, &#xC704; enum &#xAC12;&#xC5D0;&#xC11C; &#xB3D9;&#xC77C;&#xD55C; &#xC774;&#xB984;&#xC744; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>A handy feature of enums is that you can also go from a numeric value to the name of that value in the enum.
 For example, if we had the value <code>2</code> but weren&apos;t sure what that mapped to in the <code>Color</code> enum above, we could look up the corresponding name:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">enum</span> Color {Red = <span class="hljs-number">1</span>, Green, Blue}
@@ -523,6 +552,10 @@ For example, if we had the value <code>2</code> but weren&apos;t sure what that 
 <span class="hljs-built_in">console</span>.log(colorName); <span class="hljs-comment">// Displays &apos;Green&apos; as its value is 2 above</span>
 </code></pre>
 <h1 id="any">Any</h1>
+<p>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0;&#xC11C; &#xBCC0;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC54C; &#xC218; &#xC5C6;&#xC744; &#xC218; &#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xB85C; &#xC678;&#xBD80; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAC70;&#xB098; &#xC720;&#xC800;&#xC5D0;&#xAC8C;&#xC11C; &#xAC12;&#xC774; &#xC62C; &#xACBD;&#xC6B0; &#xC785;&#xB2C8;&#xB2E4;. &#xC774;&#xB7F0; &#xAC12;&#xB4E4;&#xC740; &#xB3D9;&#xC801;&#xC73C;&#xB85C; &#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7F0; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xD0C0;&#xC785; &#xAC80;&#xC0AC;&#xB97C; &#xCEF4;&#xD30C;&#xC77C; &#xC2DC;&#xC5D0; &#xD1B5;&#xACFC;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xADF8;&#xB807;&#xAC8C; &#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; <code>any</code> &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xBA85;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>We may need to describe the type of variables that we do not know when we are writing an application.
 These values may come from dynamic content, e.g. from the user or a 3rd party library.
 In these cases, we want to opt-out of type-checking and let the values pass through compile-time checks.
@@ -531,6 +564,9 @@ To do so, we label these with the <code>any</code> type:</p>
 notSure = <span class="hljs-string">&quot;maybe a string instead&quot;</span>;
 notSure = <span class="hljs-literal">false</span>; <span class="hljs-comment">// okay, definitely a boolean</span>
 </code></pre>
+<p><code>any</code> &#xD0C0;&#xC785;&#xC740; JavaScript&#xC5D0;&#xC11C; &#xC874;&#xC81C;&#xD558;&#xB294; &#xAC15;&#xB825;&#xD55C; &#xBC29;&#xBC95; &#xC785;&#xB2C8;&#xB2E4;
+&#xBE44;&#xC2B7;&#xD55C; &#xBC25;&#xBC85;&#xC73C;&#xB85C; <code>Object</code>&#xC640; &#xAC19;&#xC774; &#xAE30;&#xB300;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB978; &#xC5B8;&#xC5B4;&#xB4E4; &#xCC98;&#xB7FC;
+&#xADF8;&#xB7EC;&#xB098; <code>Object</code>&#xD0C0;&#xC785;&#xC758; &#xBCC0;&#xC218;&#xB294; </p>
 <p>The <code>any</code> type is a powerful way to work with existing JavaScript, allowing you to gradually opt-in and opt-out of type-checking during compilation.
 You might expect <code>Object</code> to play a similar role, as it does in other languages.
 But variables of type <code>Object</code> only allow you to assign any value to them - you can&apos;t call arbitrary methods on them, even ones that actually exist:</p>
@@ -548,48 +584,69 @@ For example, you may have an array but the array has a mix of different types:</
 list[<span class="hljs-number">1</span>] = <span class="hljs-number">100</span>;
 </code></pre>
 <h1 id="void">Void</h1>
+<p><code>void</code>&#xB294; &#xC870;&#xAE08; <code>any</code>&#xC640; &#xBE44;&#xC2B7;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC73C;&#xB098; any&#xD0C0;&#xC785;&#xC758; &#xAE30;&#xB2A5;&#xC744; &#xBAA8;&#xB450; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC9C0;&#xB294; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC8FC;&#xB85C; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xB9AC;&#xD134; &#xAC12;&#xC774; &#xC5C6;&#xC744;&#xB54C; &#xC8FC;&#xB85C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p><code>void</code> is a little like the opposite of <code>any</code>: the absence of having any type at all.
 You may commonly see this as the return type of functions that do not return a value:</p>
 <pre><code class="lang-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">warnUser</span>(<span class="hljs-params"></span>): <span class="hljs-title">void</span> </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;This is my warning message&quot;</span>);
 }
 </code></pre>
+<p><code>void</code>&#xD0C0;&#xC785;&#xC758; &#xBCC0;&#xC218;&#xAC00; &#xC120;&#xC5B8;&#xB418;&#xB294; &#xAC83;&#xC740; &#xC720;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. <code>undefined</code>&#xB098; <code>null</code>&#xB85C; &#xD560;&#xB2F9;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>Declaring variables of type <code>void</code> is not useful because you can only assign <code>undefined</code> or <code>null</code> to them:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> unusable: <span class="hljs-built_in">void</span> = <span class="hljs-literal">undefined</span>;
 </code></pre>
-<h1 id="null-and-undefined">Null and Undefined</h1>
+<h1 id="null-&#xACFC;-undefined">Null &#xACFC; Undefined</h1>
+<p>TypeScript&#xC5D0;&#xC11C; <code>undefined</code> &#xC640; <code>null</code>&#xC740; &#xC0AC;&#xC2E4; &#xAC01;&#xAC01; &#xC790;&#xC2E0; &#xC774;&#xB984;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+<code>void</code>&#xB791; &#xBE44;&#xC2B7;&#xD558;&#xB098; &#xC774; &#xB458;&#xC740; &#xB9E4;&#xC6B0; &#xC720;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>In TypeScript, both <code>undefined</code> and <code>null</code> actually have their own types named <code>undefined</code> and <code>null</code> respectively.
 Much like <code>void</code>, they&apos;re not extremely useful on their own:</p>
 <pre><code class="lang-ts"><span class="hljs-comment">// Not much else we can assign to these variables!</span>
 <span class="hljs-keyword">let</span> u: <span class="hljs-literal">undefined</span> = <span class="hljs-literal">undefined</span>;
 <span class="hljs-keyword">let</span> n: <span class="hljs-literal">null</span> = <span class="hljs-literal">null</span>;
 </code></pre>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; <code>null</code> &#xACFC; <code>undefined</code> &#xB294; &#xB2E4;&#xB978; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC758; &#xAE30;&#xBCF8;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.
+&#xC774; &#xC758;&#xBBF8;&#xB294; <code>number</code>&#xC5D0; <code>null</code>&#xC774;&#xB098; <code>undefined</code>&#xB97C; &#xD560;&#xB2F9;&#xD560;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>By default <code>null</code> and <code>undefined</code> are subtypes of all other types.
 That means you can assign <code>null</code> and <code>undefined</code> to something like <code>number</code>.</p>
+<p>&#xADF8;&#xB7EC;&#xB098; <code>--strictNullChecks</code> &#xC120;&#xC5B8;&#xC774; &#xB418;&#xBA74; <code>undefined</code> &#xC640; <code>null</code> &#xC740; <code>void</code>&#xC640; &#xAC01;&#xAC01; &#xC790;&#xC2E0;&#xC758; &#xD0C0;&#xC785;&#xC5D0;&#xB9CC; &#xD560;&#xB2F9;&#xD560;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xAC83;&#xC740; <em>&#xB9CE;&#xC740;</em> &#xC624;&#xB958;&#xB97C; &#xD53C;&#xD560;&#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7F0;&#xACBD;&#xC6B0;&#xC5D0;&#xB294; <code>string</code> <code>null</code> <code>undefined</code>
+Union &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; &#xB098;&#xC911;&#xC5D0; &#xB098;&#xC640;&#xC787;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>However, when using the <code>--strictNullChecks</code> flag, <code>null</code> and <code>undefined</code> are only assignable to <code>void</code> and their respective types.
 This helps avoid <em>many</em> common errors.
 In cases where you want to pass in either a <code>string</code> or <code>null</code> or <code>undefined</code>, you can use the union type <code>string | null | undefined</code>.
 Once again, more on union types later on.</p>
 <blockquote>
+<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D;: &#xAC00;&#xB2A5;&#xD558;&#xBA74; <code>--strictNullChecks</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; handbook &#xBAA9;&#xC815; &#xC0C1; &#xC635;&#xC158;&#xC774; &#xAEBC;&#xC838;&#xC788;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>As a note: we encourage the use of <code>--strictNullChecks</code> when possible, but for the purposes of this handbook, we will assume it is turned off.</p>
 </blockquote>
 <h1 id="never">Never</h1>
+<p><code>never</code> &#xD0C0;&#xC785;&#xC740; &#xC808;&#xB300;&#xB85C; &#xBC1C;&#xC0DD;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xAC12;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.
+&#xC608;&#xC2DC;&#xB85C; <code>never</code>&#xC740; &#xD568;&#xC218; &#xD45C;&#xD604;&#xC2DD; &#xC774;&#xAC70;&#xB098; &#xC5B8;&#xC81C;&#xB098; &#xC608;&#xC678;&#xB97C; &#xB358;&#xC9C0;&#xB294; &#xD654;&#xC0B4;&#xD45C; &#xD568;&#xC218; &#xC774;&#xAC70;&#xB098; &#xC808;&#xB300;&#xB85C; &#xBC18;&#xD658;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xD45C;&#xD604;&#xC2DD;&#xC785;&#xB2C8;&#xB2E4;.
+&#xBCC0;&#xC218; &#xB610;&#xD55C; <code>never</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC73C;&#xB098; &#xD0C0;&#xC785; &#xBCF4;&#xD638;&#xC5D0; &#xC758;&#xD574; &#xAC12;&#xC774; &#xD560;&#xB2F9;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>The <code>never</code> type represents the type of values that never occur.
 For instance, <code>never</code> is the return type for a function expression or an arrow function expression that always throws an exception or one that never returns;
 Variables also acquire the type <code>never</code> when narrowed by any type guards that can never be true.</p>
+<p><code>never</code> &#xD0C0;&#xC785;&#xC740; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC758; &#xC11C;&#xBE0C; &#xD0C0;&#xC785;&#xC774;&#xBA70;, &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC5D0; &#xD560;&#xB2F9;&#xC774; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xBC18;&#xB300;&#xB85C; <code>never</code> &#xC5D0; &#xD560;&#xB2F9;&#xD558;&#xAC70;&#xB098; &#xC11C;&#xBE0C; &#xD0C0;&#xC785;&#xC774; &#xB420;&#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4; (<code>never</code> &#xC2A4;&#xC2A4;&#xB85C; &#xC81C;&#xC678;&#xD558;&#xACE0;)
+<code>never</code>&#xC5D0;&#xB294; <code>any</code> &#xC870;&#xCC28; &#xD560;&#xB2F9; &#xB420; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <p>The <code>never</code> type is a subtype of, and assignable to, every type; however, <em>no</em> type is a subtype of, or assignable to, <code>never</code> (except <code>never</code> itself).
 Even <code>any</code> isn&apos;t assignable to <code>never</code>.</p>
+<p>&#xD568;&#xC218;&#xAC00; <code>never</code>&#xC744; &#xBCC0;&#xD658;&#xD558;&#xB294; &#xBA87; &#xAC00;&#xC9C0; &#xC608;&#xC2DC; &#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>Some examples of functions returning <code>never</code>:</p>
-<pre><code class="lang-ts"><span class="hljs-comment">// Function returning never must have unreachable end point</span>
+<pre><code class="lang-ts"><span class="hljs-comment">// &#xD568;&#xC218;&#xAC00; never&#xB97C; &#xBCC0;&#xD658; &#xD560;&#xB824;&#xBA74; &#xBC18;&#xB4DC;&#xC2DC; &#xC885;&#xC810;&#xC5D0; &#xB3C4;&#xB2EC;&#xD560; &#xC218; &#xC5C6;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</span>
+<span class="hljs-comment">// Function returning never must have unreachable end point</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">error</span>(<span class="hljs-params">message: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">never</span> </span>{
     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(message);
 }
 
+<span class="hljs-comment">// &#xB9AC;&#xD134; &#xD0C0;&#xC785;&#xC740; never&#xB85C; &#xCD94;&#xB860;&#xB429;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-comment">// Inferred return type is never</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fail</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">return</span> error(<span class="hljs-string">&quot;Something failed&quot;</span>);
 }
 
+<span class="hljs-comment">// &#xD568;&#xC218;&#xB294; &#xBC18;&#xBCF5;&#xBB38;&#xC5D0;&#xC758;&#xD574; &#xBC18;&#xBCF5;&#xB418;&#xC5D0; &#xB05D;&#xB098;&#xC9C0; &#xC548;&#xC2B5;&#xB2C8;&#xB2E4;.</span>
 <span class="hljs-comment">// Function returning never must have unreachable end point</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">infiniteLoop</span>(<span class="hljs-params"></span>): <span class="hljs-title">never</span> </span>{
     <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
@@ -597,6 +654,8 @@ Even <code>any</code> isn&apos;t assignable to <code>never</code>.</p>
 }
 </code></pre>
 <h1 id="object">Object</h1>
+<p><code>object</code> &#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xD45C;&#xC2DC;&#xB418;&#xB294; &#xD0C0;&#xC785;&#xC774; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;. &#xC989; <code>number</code> <code>string</code> <code>boolean</code> <code>symbol</code> <code>null</code> <code>undefined</code> &#xAC19;&#xC740; &#xAC83;&#xC774; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;.</p>
+<p><code>object</code> &#xD0C0;&#xC785;&#xACFC; APIs&#xB294; <code>Object.create</code> &#xB85C; &#xC880;&#xB354; &#xC88B;&#xAC8C; &#xD45C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC608;&#xC2DC;&#xB85C;:</p>
 <p><code>object</code> is a type that represents the non-primitive type, i.e. any thing that is not <code>number</code>, <code>string</code>, <code>boolean</code>, <code>symbol</code>, <code>null</code>, or <code>undefined</code>.</p>
 <p>With <code>object</code> type, APIs like <code>Object.create</code> can be better represented. For example:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span>(<span class="hljs-params">o: object | <span class="hljs-literal">null</span></span>): <span class="hljs-title">void</span></span>;
@@ -609,27 +668,37 @@ create(<span class="hljs-string">&quot;string&quot;</span>); <span class="hljs-c
 create(<span class="hljs-literal">false</span>); <span class="hljs-comment">// Error</span>
 create(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// Error</span>
 </code></pre>
-<h1 id="type-assertions">Type assertions</h1>
+<h1 id="type-&#xBA85;&#xC2DC;">Type &#xBA85;&#xC2DC;</h1>
+<p>&#xB54C;&#xB85C;&#xB294; TypeScript&#xC758; &#xBCF4;&#xB2E4; &#xB354; &#xB9CE;&#xC740; &#xAC83;&#xC744; &#xC54C;&#xAC8C;&#xB418;&#xB294; &#xC0C1;&#xD669;&#xC774; &#xC62C;&#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>Sometimes you&apos;ll end up in a situation where you&apos;ll know more about a value than TypeScript does.
 Usually this will happen when you know the type of some entity could be more specific than its current type.</p>
-<p><em>Type assertions</em> are a way to tell the compiler &quot;trust me, I know what I&apos;m doing.&quot;
+<p>&quot;&#xB0A0; &#xBBFF;&#xC5B4;, &#xB09C; &#xB0B4;&#xAC00; &#xBB58;&#xD558;&#xB294;&#xC9C0; &#xC54C;&#xC544;&quot;
+<em>Type assertions</em> are a way to tell the compiler &quot;trust me, I know what I&apos;m doing.&quot;
 A type assertion is like a type cast in other languages, but performs no special checking or restructuring of data.
 It has no runtime impact, and is used purely by the compiler.
 TypeScript assumes that you, the programmer, have performed any special checks that you need.</p>
+<p>&#xD0C0;&#xC785; &#xBA85;&#xC2DC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xB450; &#xAC00;&#xC9C0; &#xD615;&#xD0DC;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xD558;&#xB098;&#xB294; &quot;&#xAEBD;&#xC1E0; &#xAD04;&#xD638;&quot; &#xAD6C;&#xBB38; &#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>Type assertions have two forms.
 One is the &quot;angle-bracket&quot; syntax:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> someValue: <span class="hljs-built_in">any</span> = <span class="hljs-string">&quot;this is a string&quot;</span>;
 
 <span class="hljs-keyword">let</span> strLength: <span class="hljs-built_in">number</span> = (&lt;<span class="hljs-built_in">string</span>&gt;someValue).length;
 </code></pre>
+<p>&#xADF8;&#xB9AC;&#xACE0; &#xB2E4;&#xB978; &#xD558;&#xB098;&#xB294; <code>as</code> &#xAD6C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <p>And the other is the <code>as</code>-syntax:</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">let</span> someValue: <span class="hljs-built_in">any</span> = <span class="hljs-string">&quot;this is a string&quot;</span>;
 
 <span class="hljs-keyword">let</span> strLength: <span class="hljs-built_in">number</span> = (someValue as <span class="hljs-built_in">string</span>).length;
 </code></pre>
+<p>&#xB450; &#xC608;&#xC2DC;&#xB294; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC120;&#xD638;&#xC5D0; &#xB530;&#xB77C; &#xD558;&#xB098;&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; TypeScript&#xB97C; JSX&#xC640; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; <code>as</code> &#xD615;&#xD0DC;&#xC758; &#xBA85;&#xC2DC;&#xB9CC; &#xD5C8;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <p>The two samples are equivalent.
 Using one over the other is mostly a choice of preference; however, when using TypeScript with JSX, only <code>as</code>-style assertions are allowed.</p>
-<h1 id="a-note-about-let">A note about <code>let</code></h1>
+<h1 id="let-&#xC5D0;-&#xB300;&#xD55C;-&#xACF5;&#xC9C0;"><code>let</code> &#xC5D0; &#xB300;&#xD55C; &#xACF5;&#xC9C0;</h1>
+<p>&#xC774;&#xBBF8; &#xC54C;&#xACE0; &#xACC4;&#xC2DC;&#xACA0;&#xC9C0;&#xB9CC;, JavaScript&#xC758; <code>var</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83; &#xB300;&#xC2E0;<code>let</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xAC83;&#xC774; &#xC880;&#xB354; &#xC775;&#xC219;&#xD560;&#xAC83;&#xC785;&#xB2C8;&#xB2E4;.
+<code>let</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB294; &#xC0AC;&#xC2E4; TypeScript&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560;&#xC218; &#xC788;&#xB294; JavaScript &#xCD5C;&#xC2E0; &#xAD6C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC790;&#xC138;&#xD55C;&#xAC74; &#xB098;&#xC911;&#xC5D0; &#xB2E4;&#xB8E8;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;, &#xADF8;&#xB7EC;&#xB098; &#xB9CE;&#xC740; JavaScript&#xC758; &#xC8FC;&#xB41C; &#xBB38;&#xC81C;&#xB294; <code>let</code> &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xAC83;&#xC73C;&#xB85C; &#xD574;&#xACB0;&#xB428;&#xB2C8;&#xB2E4;. &#xADF8;&#xB808;&#xC11C; &#xAC00;&#xB2A5;&#xD558;&#xBA74; &#xC5B8;&#xC81C;&#xB4E0;&#xC9C0; <code>var</code> &#xB300;&#xC2E0; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 <p>You may&apos;ve noticed that so far, we&apos;ve been using the <code>let</code> keyword instead of JavaScript&apos;s <code>var</code> keyword which you might be more familiar with.
 The <code>let</code> keyword is actually a newer JavaScript construct that TypeScript makes available.
 We&apos;ll discuss the details later, but many common problems in JavaScript are alleviated by using <code>let</code>, so you should use it instead of <code>var</code> whenever possible.</p>
@@ -676,7 +745,7 @@ We&apos;ll discuss the details later, but many common problems in JavaScript are
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Basic Types","level":"1.2","depth":1,"next":{"title":"Variable Declarations","level":"1.3","depth":1,"path":"pages/Variable Declarations.md","ref":"./pages/Variable Declarations.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Basic Types.md","mtime":"2018-07-01T10:24:27.717Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-01T11:56:10.813Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Basic Types","level":"1.2","depth":1,"next":{"title":"Variable Declarations","level":"1.3","depth":1,"path":"pages/Variable Declarations.md","ref":"./pages/Variable Declarations.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Basic Types.md","mtime":"2018-07-02T14:09:45.832Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-02T14:10:17.144Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
