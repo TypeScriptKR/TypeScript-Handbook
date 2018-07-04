@@ -390,10 +390,10 @@ Using one over the other is mostly a choice of preference; however, when using T
 
 # `let` 에 대한 공지
 
-이미 알고 계시겠지만, JavaScript의 `var` 키워드를 사용하는 것 대신`let`을 사용하는것이 좀더 익숙할것입니다.
-`let` 키워드는 사실 TypeScript에서 사용할수 있는 JavaScript 최신 구문입니다.
-자세한건 나중에 다루겠습니다, 그러나 많은 JavaScript의 주된 문제는 `let` 을 사용하는것으로 해결됨니다. 그레서 가능하면 언제든지 `var` 대신 사용해야 합니다.
-
 You may've noticed that so far, we've been using the `let` keyword instead of JavaScript's `var` keyword which you might be more familiar with.
 The `let` keyword is actually a newer JavaScript construct that TypeScript makes available.
 We'll discuss the details later, but many common problems in JavaScript are alleviated by using `let`, so you should use it instead of `var` whenever possible.
+
+지금까지 우리가 JavaScript에서 사용하던 `var`키워드 대신 `let`키워드를 사용하고 있었음을 알고 계실 겁니다.
+`let` 키워드는 사실 TypeScript에서 사용할 수 있는 JavaScript 최신 구문입니다.
+자세한 건 나중에 다루겠습니다, 그러나 많은 JavaScript의 주된 문제는 `let` 을 사용하는 것으로 해결됩니다. 그래서 가능하면 언제든지 `var` 대신 사용해야 합니다. 
