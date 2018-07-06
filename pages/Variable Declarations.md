@@ -1,18 +1,30 @@
-# Variable Declarations
+# 변수 선언
 
 `let` and `const` are two relatively new types of variable declarations in JavaScript.
 As we mentioned earlier, `let` is similar to `var` in some respects, but allows users to avoid some of the common "gotchas" that users run into in JavaScript.
 `const` is an augmentation of `let` in that it prevents re-assignment to a variable.
 
+`let` 과 `const`는 JavaScript에서 두 가지 비교적 새로운 유형의 변수 선언 방식입니다.
+이전에 언급했듯이, `let`은 `var`와 비교적 유사하지만, JavaScript에서 사용자들이 주로 하는 실수를 피할 수 있습니다. 
+`const`는 변수에 재할당을 막았다는 점에서 `let`을 확장한 것 입니다.
+
 With TypeScript being a superset of JavaScript, the language naturally supports `let` and `const`.
 Here we'll elaborate more on these new declarations and why they're preferable to `var`.
+
+JavaScript에서 시작된 TypeScript 슈퍼 셋은 자연스럽게 언어에서 `let`과 `const`을 지원합니다. 
+여기서 새로운 선언 방식에 설명할 것이고 왜 `var`보다 나은지 설명할 것입니다.
 
 If you've used JavaScript offhandedly, the next section might be a good way to refresh your memory.
 If you're intimately familiar with all the quirks of `var` declarations in JavaScript, you might find it easier to skip ahead.
 
-# `var` declarations
+JavaScript를 즉석에서 사용했다면 다음 부문은 메모리를 새롭게 고치는 좋은 방법이 될 것입니다. 
+JavaScript에서 `var`의 단점을 잘 알고 있으면 더 쉽게 넘어갈 수 있습니다.
+
+# `var` 선언
 
 Declaring a variable in JavaScript has always traditionally been done with the `var` keyword.
+
+JavaScript에서 변수를 `var` 전통적으로 키워드로 선언하였습니다.
 
 ```ts
 var a = 10;
@@ -20,7 +32,11 @@ var a = 10;
 
 As you might've figured out, we just declared a variable named `a` with the value `10`.
 
+바로 아시겠지만 그냥 `10`이라는 값을 가진 `a`라는 변수를 선언하였습니다. 
+
 We can also declare a variable inside of a function:
+
+또한, 변수를 함수 안에서 선언 할 수 있습니다.
 
 ```ts
 function f() {
@@ -31,6 +47,8 @@ function f() {
 ```
 
 and we can also access those same variables within other functions:
+
+그리고 같은 변수를 다른 내부 함수에서 또한 접근 할 수 있습니다.
 
 ```ts
 function f() {
@@ -48,6 +66,10 @@ g(); // returns '11'
 In this above example, `g` captured the variable `a` declared in `f`.
 At any point that `g` gets called, the value of `a` will be tied to the value of `a` in `f`.
 Even if `g` is called once `f` is done running, it will be able to access and modify `a`.
+
+위 예제에서는 `f` 안에서 선언된 `a`라는 변수를 `g`가 사용했습니다.
+`g`가 호출 될때 마다 `a`는 `f`의 `a`값에 연결됩니다.
+`f`가 호출되면 `g`가 호출되더라도 `a`에 접근하여 수정할 수 있습니다.
 
 ```ts
 function f() {
@@ -72,6 +94,9 @@ f(); // returns '2'
 `var` declarations have some odd scoping rules for those used to other languages.
 Take the following example:
 
+`var` 선언은 다른 언어에서 사용되는 것보다 오래된 범위 규칙을 가지고 있습니다.
+예제를 따라 해 봅시다.
+
 ```ts
 function f(shouldInitialize: boolean) {
     if (shouldInitialize) {
@@ -91,8 +116,17 @@ That's because `var` declarations are accessible anywhere within their containin
 Some people call this *`var`-scoping* or *function-scoping*.
 Parameters are also function scoped.
 
+몇 독자는 이 예제에서 재확인 할 것입니다.
+변수 `x`는 *`if`문 안*에서 선언되었습니다 그리고 if 문 밖에서 접근할 수 있습니다.
+`var`은 함수, 모듈, namespace, 전역(선언된 블록 위치 관계없이)에서 접근 가능한 선언이기 때문입니다.
+이것을 *`var`-scoping* 또는 *function-scoping*이라고 부릅니다.
+매개 변수 또한 함수 범위입니다.
+
 These scoping rules can cause several types of mistakes.
 One problem they exacerbate is the fact that it is not an error to declare the same variable multiple times:
+
+이 범위 지정 규칙은 여러 실수를 일으킬 수 있습니다.
+이 문제가 더 힘들게 하는것은 같은 변수를 여러번 선언 하는것이 오류가 아니라는것입니다.
 
 ```ts
 function sumMatrix(matrix: number[][]) {
@@ -111,9 +145,14 @@ function sumMatrix(matrix: number[][]) {
 Maybe it was easy to spot out for some, but the inner `for`-loop will accidentally overwrite the variable `i` because `i` refers to the same function-scoped variable.
 As experienced developers know by now, similar sorts of bugs slip through code reviews and can be an endless source of frustration.
 
+찾아내기 쉬울지도 모르지만, `for`반복문 안의 `i`변수는 같은 함수 범위 안의 `i`를 참조하여 덮어 씁니다.
+경험많은 개발자는 바로 알지만 비슷한 종류의 버그가 코드리뷰를 통해 끝없이 좌절할수 있습니다.
+
 ## Variable capturing quirks
 
 Take a quick second to guess what the output of the following snippet is:
+
+잠시 다음 코드의 결과가 어떻게 나올지 추측해보세요.
 
 ```ts
 for (var i = 0; i < 10; i++) {
@@ -123,7 +162,11 @@ for (var i = 0; i < 10; i++) {
 
 For those unfamiliar, `setTimeout` will try to execute a function after a certain number of milliseconds (though waiting for anything else to stop running).
 
+익숙하지 않은 사람들을 위해, `setTimeout`은 함수를 몇 밀리세컨드 뒤에 실행시킵니다. (프로그램이 멈추지 않고 바로 넘어갑니다.)
+
 Ready? Take a look:
+
+준비되었나요? 한번 봅시다.
 
 ```text
 10
@@ -141,6 +184,9 @@ Ready? Take a look:
 Many JavaScript developers are intimately familiar with this behavior, but if you're surprised, you're certainly not alone.
 Most people expect the output to be
 
+많은 JavaScript개발자는 어떻게 결과가 나올지 알고 있지만, 확실히 혼자서만 놀란 것은 아닐겁니다.
+대부분 사람은 다음과 같이 결과가 나오길 기대합니다.
+
 ```text
 0
 1
@@ -157,12 +203,22 @@ Most people expect the output to be
 Remember what we mentioned earlier about variable capturing?
 Every function expression we pass to `setTimeout` actually refers to the same `i` from the same scope.
 
+우리가 이전에 변수가 어떻게 묶인다고 언급했는지 기억하시나요?
+모든 함수 표현은 `setTimeout`이 사실 같은 `i`를 참조하고 있었습니다.
+
 Let's take a minute to consider what that means.
 `setTimeout` will run a function after some number of milliseconds, *but only* after the `for` loop has stopped executing;
 By the time the `for` loop has stopped executing, the value of `i` is `10`.
 So each time the given function gets called, it will print out `10`!
 
+잠시 그거 어떤 의미인지 들여다 봅시다.
+`setTimeout`은 함수를 몇 밀리세컨드 뒤에 실행힙낟. *그러나 오직* `for`문이 끝난뒤 실행됩니다.
+`for`문이 다 실행되면 `i`의 값은 `10`입니다.
+그리고 시간이 지나 함수가 실행되면 `10`이 출력될것입니다.
+
 A common work around is to use an IIFE - an Immediately Invoked Function Expression - to capture `i` at each iteration:
+
+IIFE(즉시 실행 함수 표현식)을 사용하여 `i`가 각각 반복문에서 일반적으로 사용 할수 있습니다. 
 
 ```ts
 for (var i = 0; i < 10; i++) {
@@ -177,10 +233,16 @@ for (var i = 0; i < 10; i++) {
 This odd-looking pattern is actually pretty common.
 The `i` in the parameter list actually shadows the `i` declared in the `for` loop, but since we named them the same, we didn't have to modify the loop body too much.
 
-# `let` declarations
+이 이상한 패턴은 사실 꾀흔합니다.
+`i`매계변수는 `for` 반복문 안에서 `i`가 선언되어 그러나 지금까지 같은 이름을사영 했습니다. 그래서 우리는 반복문을 수정하지 않아도 됩니다.
+
+# `let` 선언
 
 By now you've figured out that `var` has some problems, which is precisely why `let` statements were introduced.
 Apart from the keyword used, `let` statements are written the same way `var` statements are.
+
+이제 `var`가 가지고 있는 문제를 알았습니다. 이것은 왜 `let`이 도입되었는지 정확히 설명합니다.
+사용된 키워드와 별도로 `let`은 `var`문과 같은 방식으로 작성합니다.
 
 ```ts
 let hello = "Hello!";
@@ -188,10 +250,15 @@ let hello = "Hello!";
 
 The key difference is not in the syntax, but in the semantics, which we'll now dive into.
 
+구문에 차이점이 있는것이 아니라 의미에 있습니다. 이제 내용을 살펴보겠습니다.
+
 ## Block-scoping
 
 When a variable is declared using `let`, it uses what some call *lexical-scoping* or *block-scoping*.
 Unlike variables declared with `var` whose scopes leak out to their containing function, block-scoped variables are not visible outside of their nearest containing block or `for`-loop.
+
+변수를 `let`으로 선언 하면 *letxical-scoping* 혹은 *block-scoping*이라고 부름니다.
+범위 밖으로 누수되는 `var` 선언과 달리 가장 가까운 범위 블록 밖 또눈 `for`문 밖에서 볼수 없습니다.
 
 ```ts
 function f(input: boolean) {
@@ -199,11 +266,13 @@ function f(input: boolean) {
 
     if (input) {
         // Still okay to reference 'a'
+        // 계속 `a`를 참조할 수 있습니다.
         let b = a + 1;
         return b;
     }
 
     // Error: 'b' doesn't exist here
+    // 오류: `b`는 더 이상 존제하지 않습니다.
     return b;
 }
 ```
@@ -211,7 +280,12 @@ function f(input: boolean) {
 Here, we have two local variables `a` and `b`.
 `a`'s scope is limited to the body of `f` while `b`'s scope is limited to the containing `if` statement's block.
 
+여기 두 로컬변수 `a`와 `b`가 있습니다.
+`a`의 범위는 `f`의 안으로 제한 되는 반면에 `b`의 범위는 `if`구문안으로 제한됨니다.
+
 Variables declared in a `catch` clause also have similar scoping rules.
+
+`catch` 에서도 같은 변수 범위 규직을 같이고 있습니다.
 
 ```ts
 try {
@@ -222,6 +296,7 @@ catch (e) {
 }
 
 // Error: 'e' doesn't exist here
+// 오류 : 'e`는 더 이상 존제하지 않습니다.
 console.log(e);
 ```
 
@@ -230,7 +305,7 @@ While these variables are "present" throughout their scope, all points up until 
 This is just a sophisticated way of saying you can't access them before the `let` statement, and luckily TypeScript will let you know that.
 
 ```ts
-a++; // illegal to use 'a' before it's declared;
+a++; // illegal to use 'a' before it's declared; // `a`가 선언되기 전에 사용하느것은 불가능합니다.
 let a;
 ```
 
