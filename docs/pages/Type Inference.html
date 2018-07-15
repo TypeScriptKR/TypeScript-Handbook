@@ -1,0 +1,595 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Type Inference · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Type Compatibility.html" />
+    
+    
+    <link rel="prev" href="Enums.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Basic Types.html">
+            
+                <a href="Basic Types.html">
+            
+                    
+                    Basic Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Variable Declarations.html">
+            
+                <a href="Variable Declarations.html">
+            
+                    
+                    Variable Declarations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Interfaces.html">
+            
+                <a href="Interfaces.html">
+            
+                    
+                    Interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Classes.html">
+            
+                <a href="Classes.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Functions.html">
+            
+                <a href="Functions.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Generics.html">
+            
+                <a href="Generics.html">
+            
+                    
+                    Generics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="Enums.html">
+            
+                <a href="Enums.html">
+            
+                    
+                    Enums
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="Type Inference.html">
+            
+                <a href="Type Inference.html">
+            
+                    
+                    Type Inference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Type Compatibility.html">
+            
+                <a href="Type Compatibility.html">
+            
+                    
+                    Type Compatibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="Advanced Types.html">
+            
+                <a href="Advanced Types.html">
+            
+                    
+                    Advanced Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Symbols.html">
+            
+                <a href="Symbols.html">
+            
+                    
+                    Symbols
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="Iterators and Generators.html">
+            
+                <a href="Iterators and Generators.html">
+            
+                    
+                    Iterators and Generators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="Modules.html">
+            
+                <a href="Modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="Namespaces.html">
+            
+                <a href="Namespaces.html">
+            
+                    
+                    Namespaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="Namespaces and Modules.html">
+            
+                <a href="Namespaces and Modules.html">
+            
+                    
+                    Namespaces and Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="Module Resolution.html">
+            
+                <a href="Module Resolution.html">
+            
+                    
+                    Module Resolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="Declaration Merging.html">
+            
+                <a href="Declaration Merging.html">
+            
+                    
+                    Declaration Merging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="JSX.html">
+            
+                <a href="JSX.html">
+            
+                    
+                    JSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="Decorators.html">
+            
+                <a href="Decorators.html">
+            
+                    
+                    Decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="Mixins.html">
+            
+                <a href="Mixins.html">
+            
+                    
+                    Mixins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="Triple-Slash Directives.html">
+            
+                <a href="Triple-Slash Directives.html">
+            
+                    
+                    Triple-Slash Directives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="Type Checking JavaScript Files.html">
+            
+                <a href="Type Checking JavaScript Files.html">
+            
+                    
+                    Type Checking JavaScript Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Type Inference</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="introduction">Introduction</h1>
+<p>In this section, we will cover type inference in TypeScript. Namely, we&apos;ll discuss where and how types are inferred.</p>
+<p>&#xC774; &#xC139;&#xC158;&#xC5D0;&#xC11C;&#xB294;, &#xC6B0;&#xB9AC;&#xB294; TypeScript &#xC5D0;&#xC11C;&#xC758; &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC744; &#xD0D0;&#xAD6C;&#xD560;&#xAC83;&#xC774;&#xB2E4;. &#xB9D0;&#xADF8;&#xB300;&#xB85C;, &#xC6B0;&#xB9AC;&#xB294; &#xC5B4;&#xB514;&#xC11C; , &#xC5B4;&#xB5BB;&#xAC8C; &#xD0C0;&#xC785;&#xB4E4;&#xC774; &#xCD94;&#xB860;&#xC774; &#xB418;&#xC5B4;&#xC9C0;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC774;&#xC57C;&#xAE30;&#xD560;&#xAC83;&#xC774;&#xB2E4;.</p>
+<h1 id="basics&#xAE30;&#xBCF8;">Basics(&#xAE30;&#xBCF8;)</h1>
+<p>In TypeScript, there are several places where type inference is used to provide type information when there is no explicit type annotation. For example, in this code</p>
+<p>TypeScript&#xC5D0;&#xC11C; , &#xD0C0;&#xC785; &#xC5B4;&#xB178;&#xD14C;&#xC774;&#xC158;&#xC774; &#xBA85;&#xC2DC;&#xC801;&#xC774;&#xC9C0; &#xC54A;&#xB294; &#xACF3;&#xC774; &#xC788;&#xC744;&#xB54C; , &#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC774; &#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xB97C; &#xC81C;&#xACF5;&#xD574;&#xC8FC;&#xB294; &#xBA87;&#xBA85; &#xACF3;&#xC5D0;&#xC11C; &#xC788;&#xB2E4;. &#xC608;&#xB97C;&#xB4E4;&#xBA74;, &#xC774; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C;. </p>
+<pre><code class="lang-ts"><span class="hljs-keyword">let</span> x = <span class="hljs-number">3</span>;
+</code></pre>
+<p>The type of the <code>x</code> variable is inferred to be <code>number</code>.
+This kind of inference takes place when initializing variables and members, setting parameter default values, and determining function return types.</p>
+<p><code>x</code> &#xBCC0;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC740; <code>number</code>&#xB85C; &#xCD94;&#xB860;&#xB418;&#xC5B4;&#xC9C4;&#xB2E4;.
+&#xC774;&#xB7F0; &#xC885;&#xB958;&#xC758; &#xCD94;&#xB860;&#xC740; &#xBCC0;&#xC218;&#xB098; &#xBA64;&#xBC84;&#xB4E4;, &#xAE30;&#xBCF8;&#xAC12; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC138;&#xD305;&#xD558;&#xAC70;&#xB098;, &#xD568;&#xC218;&#xC758; &#xB9AC;&#xD134; &#xD0C0;&#xC785;&#xC744; &#xACB0;&#xC815;&#xD560;&#xB54C; &#xC77C;&#xC5B4;&#xB09C;&#xB2E4;.</p>
+<p>In most cases, type inference is straightforward.
+In the following sections, we&apos;ll explore some of the nuances in how types are inferred.</p>
+<p>&#xB9CE;&#xC740; &#xACBD;&#xC6B0;&#xC5D0;&#xC11C;, &#xD0C0;&#xC785;&#xCD94;&#xB860;&#xC740; &#xC544;&#xC8FC;&#xC27D;&#xAC8C; &#xC77C;&#xC5B4;&#xB09C;&#xB2E4;.
+&#xB2E4;&#xC740; &#xC139;&#xC158;&#xC5D0;&#xC11C;, &#xC6B0;&#xB9AC;&#xB294; &#xC5B4;&#xB36F;&#xAC8C; &#xD0C0;&#xC785;&#xC774; &#xB418;&#xC5B4;&#xC9C0;&#xB294; &#xAC83;&#xC5D0; &#xB300;&#xD55C; &#xBA87;&#xBA87; &#xBBF8;&#xBB18;&#xD55C; &#xBD80;&#xBD84;&#xB4E4;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xBCFC;&#xAC83;&#xC774;&#xB2E4;.</p>
+<h1 id="best-common-type">Best common type</h1>
+<p>When a type inference is made from several expressions, the types of those expressions are used to calculate a &quot;best common type&quot;. For example,</p>
+<p>&#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC740; &#xBA87;&#xBA87; &#xD45C;&#xD604;&#xC2DD;&#xC73C;&#xBD80;&#xD130; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C8;&#xB54C;, &#xADF8;&#xB7EC;&#xD55C; &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xD0C0;&#xC785;&#xB4E4;&#xC740; &quot;best common type&quot;&#xC73C;&#xB85C; &#xACC4;&#xC0B0;&#xB418;&#xC5B4; &#xC0AC;&#xC6A9;&#xB418;&#xC5B4; &#xC9C4;&#xB2E4;. &#xC608;&#xB97C;&#xB4E4;&#xBA74;,</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">let</span> x = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-literal">null</span>];
+</code></pre>
+<p>To infer the type of <code>x</code> in the example above, we must consider the type of each array element.
+Here we are given two choices for the type of the array: <code>number</code> and <code>null</code>.
+The best common type algorithm considers each candidate type, and picks the type that is compatible with all the other candidates.</p>
+<p>&#xC704; &#xC608;&#xC2DC;&#xC5D0;&#xC11C; <code>x</code>&#xC758; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD558;&#xAE30; &#xC704;&#xD574;&#xB294;, &#xC6B0;&#xB9AC;&#xB294; &#xAC01;&#xAC01; &#xD0C0;&#xC785;&#xC758; &#xBC30;&#xC5F4; &#xC694;&#xC18C;&#xB97C; &#xACE0;&#xB824;&#xD574;&#xC57C;&#xB9CC; &#xD55C;&#xB2E4;.
+&#xBC30;&#xC5F4;&#xC758; &#xD0C0;&#xC785;&#xC5D0; &#xB300;&#xD574;&#xC11C; 2&#xAC00;&#xC9C0; &#xC120;&#xD0DD;&#xC774; &#xC8FC;&#xC5B4;&#xC9C4;&#xB2E4;:<code>number</code> &#xADF8;&#xB9AC;&#xACE0; <code>null</code>.
+best common type algorithm&#xC740; &#xAC01;&#xAC01;&#xC758; &#xD6C4;&#xBCF4; &#xD0C0;&#xC785;&#xC744; &#xACE0;&#xB824;&#xD558;&#xACE0;, &#xBAA8;&#xB4E0; &#xBAA8;&#xB2E4;&#xB978; &#xD6C4;&#xBCF4;&#xC790;&#xB4E4;&#xACFC; &#xD638;&#xD658;&#xB420;&#xC218; &#xC788;&#xB294; &#xD0C0;&#xC785;&#xC744; &#xC120;&#xD0DD;&#xD55C;&#xB2E4;.</p>
+<p>Because the best common type has to be chosen from the provided candidate types, there are some cases where types share a common structure, but no one type is the super type of all candidate types. For example:</p>
+<p>best common type&#xB294; &#xC8FC;&#xC5B4;&#xC9C4; &#xD6C4;&#xBCF4; &#xD0C0;&#xC785;&#xB4E4;&#xB85C;&#xBD80;&#xD130; &#xC120;&#xD0DD;&#xB418;&#xC5B4;&#xC57C;&#xB9CC; &#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, 
+&#xD0C0;&#xC785;&#xC740; &#xACF5;&#xD1B5;&#xC801;&#xC778; &#xAD6C;&#xC870;&#xB97C; &#xACF5;&#xC720;&#xD558;&#xB294; &#xACF3;&#xC5D0;&#xC11C; &#xBA87;&#xBA87; &#xCF00;&#xC774;&#xC2A4;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC;, &#xD558;&#xB098;&#xC758; &#xD0C0;&#xC785;&#xC774; &#xBAA8;&#xB4E0; &#xD6C4;&#xBCF4; &#xD0C0;&#xC785;&#xB4E4;&#xC758; super &#xD0C0;&#xC785;&#xC740; &#xC544;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C;&#xB4E4;&#xBA74;:</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">let</span> zoo = [<span class="hljs-keyword">new</span> Rhino(), <span class="hljs-keyword">new</span> Elephant(), <span class="hljs-keyword">new</span> Snake()];
+</code></pre>
+<p>Ideally, we may want <code>zoo</code> to be inferred as an <code>Animal[]</code>, but because there is no object that is strictly of type <code>Animal</code> in the array, we make no inference about the array element type.
+To correct this, instead explicitly provide the type when no one type is a super type of all other candidates:</p>
+<p>&#xAD00;&#xB150;&#xC801;&#xC73C;&#xB85C;, &#xC6B0;&#xB9AC;&#xB294; <code>zoo</code>&#xAC00;  <code>Animal[]</code>&#xC73C;&#xB85C; &#xCD94;&#xB860;&#xB418;&#xAE30;&#xB97C; &#xC6D0;&#xD558;&#xC9C0;&#xB9CC;, &#xBC30;&#xC5F4;&#xC758; <code>Animal</code> &#xD0C0;&#xC785;&#xC758; &#xBC30;&#xC5F4;&#xB85C; &#xC5C4;&#xACA9;&#xD558;&#xAC8C; &#xC81C;&#xD55C;&#xD558;&#xB294;&#xAC8C; &#xBAA9;&#xC801;&#xC774; &#xC544;&#xB2C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xBC30;&#xC5F4; &#xC5D8;&#xB9AC;&#xBA58;&#xD2B8; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xCD94;&#xB860;&#xD560;&#xC218; &#xC5C6;&#xB2E4;. </p>
+<pre><code class="lang-ts"><span class="hljs-keyword">let</span> zoo: Animal[] = [<span class="hljs-keyword">new</span> Rhino(), <span class="hljs-keyword">new</span> Elephant(), <span class="hljs-keyword">new</span> Snake()];
+</code></pre>
+<p>When no best common type is found, the resulting inference is the union array type, <code>(Rhino | Elephant | Snake)[]</code>.
+best common type&#xC774; &#xCC3E;&#xC744;&#xC218; &#xC5C6;&#xC744;&#xB54C;, &#xACB0;&#xACFC;&#xB97C; &#xC8FC;&#xB294; &#xCD94;&#xB860;&#xC740; union array type(<code>(Rhino | Elephant | Snake)[]</code>)&#xC774;&#xB2E4;. </p>
+<h1 id="contextual-type">Contextual Type</h1>
+<p>Type inference also works in &quot;the other direction&quot; in some cases in TypeScript.
+This is known as &quot;contextual typing&quot;. Contextual typing occurs when the type of an expression is implied by its location. For example:</p>
+<p>&#xD0C0;&#xC785; &#xCD94;&#xB860;&#xC5D0;&#xB294; &#xB610;&#xD55C; TypeScript&#xC5D0;&#xC11C; &quot;&#xB610;&#xB2E4;&#xB978;&#xBC29;&#xD5A5;&quot;&#xC73C;&#xB85C; &#xB3D9;&#xC791;&#xD55C;&#xB2E4;.
+&#xC774;&#xAC83;&#xC740; &quot;contextual typing&quot;&#xC73C;&#xB85C; &#xC54C;&#xB824;&#xC838; &#xC788;&#xB2E4;. Contextual typing&#xC740; &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xD0C0;&#xC785;&#xC774; &#xC774;&#xAC83;&#xC758; &#xC704;&#xCE58;&#xC5D0; &#xB530;&#xB77C;&#xC11C; &#xB0B4;&#xD3EC;&#xB420;&#xB54C; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;. &#xC608;&#xB97C;&#xB4E4;&#xBA74;,</p>
+<pre><code class="lang-ts"><span class="hljs-built_in">window</span>.onmousedown = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">mouseEvent</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(mouseEvent.button);  <span class="hljs-comment">//&lt;- Error(&#xC5D0;&#xB7EC;)</span>
+};
+</code></pre>
+<p>For the code above to give the type error, the TypeScript type checker used the type of the <code>Window.onmousedown</code> function to infer the type of the function expression on the right hand side of the assignment.
+When it did so, it was able to infer the type of the <code>mouseEvent</code> parameter.
+If this function expression were not in a contextually typed position, the <code>mouseEvent</code> parameter would have type <code>any</code>, and no error would have been issued.</p>
+<p>&#xC704; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC8FC;&#xC5B4;&#xC9C0;&#xB294; &#xD0C0;&#xC785; &#xC5D0;&#xB7EC;&#xB294;, TypeScript type checker&#xB294; <code>Window.onmousedown</code>&#xC758; &#xC624;&#xB978;&#xCABD;&#xD3B8;&#xC758; &#xD560;&#xB2F9;&#xB41C; &#xD568;&#xC218; &#xD45C;&#xD604;&#xC2DD;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xCD94;&#xB860;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.
+&#xC774;&#xB807;&#xAC8C; &#xB420;&#xB54C;, &#xC774;&#xAC83;&#xC740;  <code>mouseEvent</code> &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC758; &#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xCD94;&#xB860;&#xD560;&#xC218;&#xC788;&#xB2E4;.
+&#xB9CC;&#xC57D; &#xC774; &#xD568;&#xC218; &#xD45C;&#xD604;&#xC2DD;&#xC774; &#xB9E5;&#xB77D;&#xC804;&#xC775; &#xD0C0;&#xC785;&#xB41C; &#xC704;&#xCE58;&#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xBA74;, <code>mouseEvent</code> &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC758; <code>any</code> &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xACE0;, &#xC5D0;&#xB7EC; &#xC774;&#xC288;&#xB294; &#xC5C6;&#xAC8C;&#xB41C;&#xB2E4;.</p>
+<p>If the contextually typed expression contains explicit type information, the contextual type is ignored.
+Had we written the above example:</p>
+<p>contextually typed expression &#xC774; &#xBA85;&#xC2DC;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xC815;&#xBCF4;&#xB97C; &#xD3EC;&#xD568;&#xD55C;&#xB2E4;&#xBA74;, contextual type&#xC744; &#xBB34;&#xC2DC;&#xB41C;&#xB2E4;.
+&#xC704;&#xC5D0; &#xC608;&#xC2DC;&#xC5D0; &#xC788;&#xB2E4;:</p>
+<pre><code class="lang-ts"><span class="hljs-built_in">window</span>.onmousedown = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">mouseEvent: <span class="hljs-built_in">any</span></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(mouseEvent.button);  <span class="hljs-comment">//&lt;- Now, no error is given(&#xC9C0;&#xAE08;, &#xC5EC;&#xAE30;&#xC5D0;&#xB294; &#xC5D0;&#xB7EC;&#xAC00; &#xC77C;&#xC5B4;&#xB098;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.)</span>
+};
+</code></pre>
+<p>The function expression with an explicit type annotation on the parameter will override the contextual type.
+Once it does so, no error is given as no contextual type applies.</p>
+<p>&#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC5D0; &#xBA85;&#xC2DC;&#xC801;&#xC778; type annotation&#xB97C; &#xAC00;&#xC9C4; &#xD568;&#xC218; expression&#xC740; contextual type&#xBCF4;&#xB2E4; &#xB354; &#xC6B0;&#xC120;&#xD55C;&#xB2E4;.
+&#xD55C;&#xBC88; &#xC774;&#xB807;&#xAC8C; &#xB418;&#xBA74;, contextual type &#xC801;&#xC6A9;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xAC83;&#xCC98;&#xB7FC; &#xC5D0;&#xB7EC;&#xAC00; &#xB098;&#xC9C0;&#xB294; &#xC54A;&#xB294;&#xB2E4;.</p>
+<p>Contextual typing applies in many cases.
+Common cases include arguments to function calls, right hand sides of assignments, type assertions, members of object and array literals, and return statements.
+The contextual type also acts as a candidate type in best common type. For example:</p>
+<p>Contextual typing&#xC740; &#xB9CE;&#xC740; &#xCF00;&#xC774;&#xC2A4;&#xC5D0; &#xC801;&#xC6A9;&#xB41C;&#xB2E4;.
+Common cases include arguments to function calls, right hand sides of assignments, type assertions, members of object and array literals, and return statements.
+contextual type&#xC740; &#xB610;&#xD55C; best common type&#xC758; &#xD6C4;&#xBCF4;&#xD0C0;&#xC785;&#xC73C;&#xB85C; &#xB3D9;&#xC791;&#xD55C;&#xB2E4; &#xC608;&#xB4E4; &#xB4E4;&#xBA74;: </p>
+<pre><code class="lang-ts">function createZoo(): Animal[] {
+    return [new Rhino(), new Elephant(), new Snake()];
+}
+</code></pre>
+<p>In this example, best common type has a set of four candidates: <code>Animal</code>, <code>Rhino</code>, <code>Elephant</code>, and <code>Snake</code>.
+Of these, <code>Animal</code> can be chosen by the best common type algorithm.</p>
+<p>&#xC774; &#xC608;&#xC2DC;&#xC5D0;&#xC11C;, best common type &#xC740; <code>Animal</code>, <code>Rhino</code>, <code>Elephant</code>, &#xADF8;&#xB9AC;&#xACE0; <code>Snake</code> &#xC758; &#xD6C4;&#xBCF4; &#xD0C0;&#xC785;&#xB4E4;&#xC744; &#xAC00;&#xC9C4;&#xB2E4;.
+&#xC5EC;&#xAE30;&#xC11C;, <code>Animal</code> &#xC740; best common type algorithm&#xC5D0; &#xC758;&#xD574;&#xC11C; &#xC120;&#xD0DD;&#xB418;&#xC5B4;&#xC9C4;&#xB2E4;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Enums.html" class="navigation navigation-prev " aria-label="Previous page: Enums">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Type Compatibility.html" class="navigation navigation-next " aria-label="Next page: Type Compatibility">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Type Inference","level":"1.9","depth":1,"next":{"title":"Type Compatibility","level":"1.10","depth":1,"path":"pages/Type Compatibility.md","ref":"./pages/Type Compatibility.md","articles":[]},"previous":{"title":"Enums","level":"1.8","depth":1,"path":"pages/Enums.md","ref":"./pages/Enums.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/Type Inference.md","mtime":"2018-07-15T06:23:14.631Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-15T06:26:02.608Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
