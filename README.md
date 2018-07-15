@@ -2,7 +2,7 @@
 
 > 번역 프로젝트 기여자
 
-ByeongGi Kim , Jaeho Lee
+ByeongGi Kim[a link](https://github.com/orgs/TypeScriptKR/people/ByeongGi) , Jaeho Lee[a link](https://github.com/minichicken) 
 
 ## 문서 빌드 방법 
 1. gitbook-cli 설치
